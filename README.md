@@ -14,8 +14,8 @@ npm install rn-toast
 import RnToast from "rn-toast";
 
 // ...
-
-const result = await RnToast.multiply(3, 7);
+toastRef.show(msg, 1000);
+<RnToast ref={(toast) => (toastRef = toast)} />
 ```
 
 ## Contributing
