@@ -11,7 +11,7 @@ npm i rn-js-toast
 ## Usage
 
 ```js
-import RnToast from "rn-toast";
+import RnToast from "rn-js-toast";
 
 // ...
 let toastRef;
