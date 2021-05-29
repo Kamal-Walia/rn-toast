@@ -1,7 +1,4 @@
-import { StyleSheet, Dimensions } from 'react-native';
-const windowHeight = Dimensions.get('window').height;
-
-const position = windowHeight - 450;
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -11,7 +8,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
     alignSelf: 'center',
-    top: position,
     marginRight: 'auto',
     marginLeft: 'auto',
     borderRadius: 18,

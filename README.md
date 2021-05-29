@@ -11,20 +11,39 @@ npm install rn-toast
 ## Usage
 
 ```js
-import RnToast from "rn-toast";
+import RnToast from "rn-js-toast";
 
 // ...
 let toastRef;
 
-  const showToast = (msg) => {
-    toastRef.show(msg, 1000);
+  const showToast = (msg, position) => {
+    /** 
+    params: msg, duration, position: top/center/bottom, positionValue: number
+    */
+    toastRef.show(msg, 1000, position);
   };
   
- <TouchableOpacity onPress={() => showToast('Hello World')}>
-        <Text>Show Toast</Text>
-        <RnToast ref={(toast) => (toastRef = toast)} />
+ <View style={styles.container}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => showToast('Hello World', 'top')}
+      >
+        <Text>Show Toast Position Top</Text>
       </TouchableOpacity>
-<RnToast ref={(toast) => (toastRef = toast)} />
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => showToast('Hello World', 'center')}
+      >
+        <Text>Show Toast Position center</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => showToast('Hello World', 'bottom')}
+      >
+        <Text>Show Toast Position Bottom</Text>
+      </TouchableOpacity>
+      <RnToast ref={(toast) => (toastRef = toast)} />
+    </View>
 ```
 
 ## Contributing

@@ -1,20 +1,35 @@
 import * as React from 'react';
 
 import { StyleSheet, TouchableOpacity, View, Text } from 'react-native';
-import RnToast from 'rn-toast';
+import RnToast from 'rn-js-toast';
 
 export default function App() {
   let toastRef;
-  const showToast = (msg) => {
-    toastRef.show(msg, 1000);
+  const showToast = (msg, position) => {
+    toastRef.show(msg, 1000, position);
   };
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => showToast('Hello World')}>
-        <Text>Show Toast</Text>
-        <RnToast ref={(toast) => (toastRef = toast)} />
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => showToast('Hello World', 'top')}
+      >
+        <Text>Show Toast Position Top</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => showToast('Hello World', 'center')}
+      >
+        <Text>Show Toast Position center</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => showToast('Hello World', 'bottom')}
+      >
+        <Text>Show Toast Position Bottom</Text>
+      </TouchableOpacity>
+      <RnToast ref={(toast) => (toastRef = toast)} />
     </View>
   );
 }
@@ -25,9 +40,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+  button: {
+    marginVertical: 15,
+    borderWidth: 1,
+    borderRadius: 5,
+    padding: 8,
   },
 });
