@@ -1,18 +1,20 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, TouchableOpacity, View, Text } from 'react-native';
 import RnToast from 'rn-toast';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    RnToast.multiply(3, 7).then(setResult);
-  }, []);
+  let toastRef;
+  const showToast = (msg) => {
+    toastRef.show(msg, 1000);
+  };
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <TouchableOpacity onPress={() => showToast('Hello World')}>
+        <Text>Show Toast</Text>
+        <RnToast ref={(toast) => (toastRef = toast)} />
+      </TouchableOpacity>
     </View>
   );
 }
