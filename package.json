@@ -1,5 +1,5 @@
 {
-  "name": "rn-toast",
+  "name": "rn-js-toast",
   "version": "0.1.0",
   "description": "Simple JS based RN toast that will work on both iOS and android",
   "main": "lib/commonjs/index",
