@@ -5,7 +5,7 @@ Simple JS based RN toast that will work on both iOS and android
 ## Installation
 
 ```sh
-npm install rn-toast
+npm i rn-js-toast
 ```
 
 ## Usage
