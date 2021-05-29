@@ -14,7 +14,16 @@ npm install rn-toast
 import RnToast from "rn-toast";
 
 // ...
-toastRef.show(msg, 1000);
+let toastRef;
+
+  const showToast = (msg) => {
+    toastRef.show(msg, 1000);
+  };
+  
+ <TouchableOpacity onPress={() => showToast('Hello World')}>
+        <Text>Show Toast</Text>
+        <RnToast ref={(toast) => (toastRef = toast)} />
+      </TouchableOpacity>
 <RnToast ref={(toast) => (toastRef = toast)} />
 ```
 
